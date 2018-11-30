@@ -23,3 +23,11 @@ def pre_process(df):
 
 
     return df
+
+# Id,groupId,matchId,assists,boosts,damageDealt,DBNOs,headshotKills,heals,killPlace,killPoints,kills,
+# killStreaks,longestKill,matchDuration,matchType,maxPlace,numGroups,rankPoints,revives,rideDistance,
+# roadKills,swimDistance,teamKills,vehicleDestroys,walkDistance,weaponsAcquired,winPoints,winPlacePerc
+
+# walkDistance, killPlace, kills, matchDuration, numGroups, maxPlace, killStreaks, boosts, rideDistance
+
+# headshotKills_over_kills
