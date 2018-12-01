@@ -95,3 +95,29 @@ def combo_l1():
 
     model.compile(loss='mae', optimizer=tf.train.AdamOptimizer(), metrics=[keras.metrics.mean_absolute_error])
     return model
+
+def combo_l2():
+    model = keras.Sequential([
+        keras.layers.Dense(120, activation=tf.nn.relu, input_dim=40, kernel_regularizer=keras.regularizers.l2(0.001)),
+        keras.layers.Dense(80, activation=tf.nn.relu, kernel_regularizer=keras.regularizers.l2(0.001)),
+        keras.layers.Dense(40, activation=tf.nn.relu),
+        keras.layers.Dense(20, activation=tf.nn.relu),
+        keras.layers.Dense(10, activation=tf.nn.relu),
+        keras.layers.Dense(1)
+    ])
+
+    model.compile(loss='mae', optimizer=tf.train.AdamOptimizer(), metrics=[keras.metrics.mean_absolute_error])
+    return model
+
+def combo_l12():
+    model = keras.Sequential([
+        keras.layers.Dense(120, activation=tf.nn.relu, input_dim=40, kernel_regularizer=keras.regularizers.l1_l2(0.00005, 0.001)),
+        keras.layers.Dense(80, activation=tf.nn.relu, kernel_regularizer=keras.regularizers.l1_l2(0.00005, 0.001)),
+        keras.layers.Dense(40, activation=tf.nn.relu),
+        keras.layers.Dense(20, activation=tf.nn.relu),
+        keras.layers.Dense(10, activation=tf.nn.relu),
+        keras.layers.Dense(1)
+    ])
+
+    model.compile(loss='mae', optimizer=tf.train.AdamOptimizer(), metrics=[keras.metrics.mean_absolute_error])
+    return model
